@@ -2,6 +2,7 @@
 Location of NOAA GEFS forecasts for SmartReservoir.org project
 
 ## Branches
-FCRE  
-SUGG  
-SUNP
+fcre  
+sugg  
+sunp
+cram (Crampton Lake, WI)
