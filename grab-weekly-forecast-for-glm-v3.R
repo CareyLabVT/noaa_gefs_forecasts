@@ -14,7 +14,7 @@ lake_lon_w_list = c(79.9, 82.017318, 72.058199, 89.4739973, 149.61051, 99.25302)
 
 lake_name_list = c("fcre", "sugg", "sunp", "cram", "tool", "prpo")
 
-directory = '/data/SCCData/NOAA/'
+directory = '/data/NOAA/'
 if(!file.exists(directory)) {
   dir.create(file.path(directory))
 }
