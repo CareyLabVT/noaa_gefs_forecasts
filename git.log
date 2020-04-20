@@ -264,3 +264,10 @@ Everything up-to-date
 
 Push the Logs to GitHub:
 
+[logs 283bb23] 04/20/20 12:38:58: Logs
+ 1 file changed, 266 insertions(+)
+ create mode 100644 git.log
+Already up to date.
+Mon Apr 20 12:39:30 EDT 2020
+To github.com:CareyLabVT/noaa_gefs_forecasts
+   be59d93..283bb23  logs -> logs
