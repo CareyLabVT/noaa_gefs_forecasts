@@ -768,3 +768,9 @@ Everything up-to-date
 
 Push the Logs to GitHub:
 
+[logs 5da33ea] 04/20/20 12:48:28: Logs
+ 1 file changed, 247 insertions(+)
+Already up to date.
+Mon Apr 20 12:49:15 EDT 2020
+To github.com:CareyLabVT/noaa_gefs_forecasts
+   3cd029a..5da33ea  logs -> logs
