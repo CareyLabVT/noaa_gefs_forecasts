@@ -30972,3 +30972,9 @@ To github.com:CareyLabVT/noaa_gefs_forecasts.git
 
 Push the Logs to GitHub:
 
+[logs fa1dcc8] 05/03/20 20:30:01: Logs
+ 1 file changed, 306 insertions(+)
+Already up to date.
+Sun May 3 20:43:07 EDT 2020
+To github.com:CareyLabVT/noaa_gefs_forecasts
+   cb4e50a..fa1dcc8  logs -> logs
