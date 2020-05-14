@@ -53908,3 +53908,309 @@ Already up to date.
 Thu May 14 05:30:46 EDT 2020
 To github.com:CareyLabVT/noaa_gefs_forecasts
    e390a60..ef853d8  logs -> logs
+[logs 52986cc] 05/14/20 05:30:01: Logs
+ 1 file changed, 6 insertions(+)
+Thu May 14 05:30:50 EDT 2020
+To github.com:CareyLabVT/noaa_gefs_forecasts
+   ef853d8..52986cc  logs -> logs
+
+
+-------------- 05/14/20 08:30:01 --------------
+
+
+Pull the R Script from GitHub:
+
+Already up to date.
+Thu May 14 08:30:03 EDT 2020
+Everything up-to-date
+
+
+Loading required package: rvest
+Loading required package: xml2
+
+****
+Welcome to rNOMADS 2.4.0 "Latinum-plated bucket"!
+Questions? Follow @rNOMADS_r on Twitter or send a message to rnomads-user@lists.r-forge.r-project.org
+Using rNOMADS as a data source for a publication?  Please cite it!
+I'm an early career researcher and every citation matters.
+****
+
+Loading required package: bitops
+[1] "/data/NOAA/fcre/fcre_20200508_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200508_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200508_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200508_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200509_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200509_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200509_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200509_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200510_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200510_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200510_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200510_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200511_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200511_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200511_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200511_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200512_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200512_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200512_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200512_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200513_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200513_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200513_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200513_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200514_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/fcre/fcre_20200514_gep_all_06z.csv is already downloaded: FALSE"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tmp2m[0:20][0:64][127:127][280:280]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dlwrfsfc[0:20][0:64][127:127][280:280]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dswrfsfc[0:20][0:64][127:127][280:280]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pratesfc[0:20][0:64][127:127][280:280]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?rh2m[0:20][0:64][127:127][280:280]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?vgrd10m[0:20][0:64][127:127][280:280]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?ugrd10m[0:20][0:64][127:127][280:280]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?spfh2m[0:20][0:64][127:127][280:280]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pressfc[0:20][0:64][127:127][280:280]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tcdcclm[0:20][0:64][127:127][280:280]"
+[1] "/data/NOAA/fcre/fcre_20200514_gep_all_12z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/fcre/fcre_20200514_gep_all_18z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/sugg/sugg_20200508_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200508_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200508_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200508_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200509_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200509_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200509_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200509_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200510_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200510_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200510_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200510_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200511_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200511_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200511_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200511_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200512_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200512_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200512_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200512_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200513_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200513_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200513_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200513_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200514_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sugg/sugg_20200514_gep_all_06z.csv is already downloaded: FALSE"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tmp2m[0:20][0:64][120:120][278:278]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dlwrfsfc[0:20][0:64][120:120][278:278]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dswrfsfc[0:20][0:64][120:120][278:278]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pratesfc[0:20][0:64][120:120][278:278]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?rh2m[0:20][0:64][120:120][278:278]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?vgrd10m[0:20][0:64][120:120][278:278]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?ugrd10m[0:20][0:64][120:120][278:278]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?spfh2m[0:20][0:64][120:120][278:278]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pressfc[0:20][0:64][120:120][278:278]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tcdcclm[0:20][0:64][120:120][278:278]"
+[1] "/data/NOAA/sugg/sugg_20200514_gep_all_12z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/sugg/sugg_20200514_gep_all_18z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/sunp/sunp_20200508_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200508_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200508_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200508_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200509_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200509_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200509_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200509_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200510_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200510_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200510_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200510_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200511_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200511_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200511_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200511_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200512_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200512_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200512_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200512_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200513_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200513_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200513_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200513_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200514_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/sunp/sunp_20200514_gep_all_06z.csv is already downloaded: FALSE"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tmp2m[0:20][0:64][133:133][288:288]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dlwrfsfc[0:20][0:64][133:133][288:288]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dswrfsfc[0:20][0:64][133:133][288:288]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pratesfc[0:20][0:64][133:133][288:288]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?rh2m[0:20][0:64][133:133][288:288]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?vgrd10m[0:20][0:64][133:133][288:288]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?ugrd10m[0:20][0:64][133:133][288:288]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?spfh2m[0:20][0:64][133:133][288:288]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pressfc[0:20][0:64][133:133][288:288]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tcdcclm[0:20][0:64][133:133][288:288]"
+[1] "/data/NOAA/sunp/sunp_20200514_gep_all_12z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/sunp/sunp_20200514_gep_all_18z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/cram/cram_20200508_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200508_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200508_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200508_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200509_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200509_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200509_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200509_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200510_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200510_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200510_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200510_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200511_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200511_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200511_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200511_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200512_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200512_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200512_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200512_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200513_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200513_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200513_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200513_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200514_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/cram/cram_20200514_gep_all_06z.csv is already downloaded: FALSE"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tmp2m[0:20][0:64][136:136][271:271]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dlwrfsfc[0:20][0:64][136:136][271:271]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dswrfsfc[0:20][0:64][136:136][271:271]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pratesfc[0:20][0:64][136:136][271:271]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?rh2m[0:20][0:64][136:136][271:271]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?vgrd10m[0:20][0:64][136:136][271:271]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?ugrd10m[0:20][0:64][136:136][271:271]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?spfh2m[0:20][0:64][136:136][271:271]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pressfc[0:20][0:64][136:136][271:271]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tcdcclm[0:20][0:64][136:136][271:271]"
+[1] "/data/NOAA/cram/cram_20200514_gep_all_12z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/cram/cram_20200514_gep_all_18z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/tool/tool_20200508_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200508_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200508_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200508_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200509_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200509_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200509_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200509_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200510_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200510_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200510_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200510_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200511_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200511_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200511_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200511_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200512_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200512_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200512_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200512_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200513_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200513_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200513_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200513_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200514_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/tool/tool_20200514_gep_all_06z.csv is already downloaded: FALSE"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tmp2m[0:20][0:64][159:159][210:210]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dlwrfsfc[0:20][0:64][159:159][210:210]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dswrfsfc[0:20][0:64][159:159][210:210]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pratesfc[0:20][0:64][159:159][210:210]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?rh2m[0:20][0:64][159:159][210:210]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?vgrd10m[0:20][0:64][159:159][210:210]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?ugrd10m[0:20][0:64][159:159][210:210]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?spfh2m[0:20][0:64][159:159][210:210]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pressfc[0:20][0:64][159:159][210:210]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tcdcclm[0:20][0:64][159:159][210:210]"
+[1] "/data/NOAA/tool/tool_20200514_gep_all_12z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/tool/tool_20200514_gep_all_18z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/prpo/prpo_20200508_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200508_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200508_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200508_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200509_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200509_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200509_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200509_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200510_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200510_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200510_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200510_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200511_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200511_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200511_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200511_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200512_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200512_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200512_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200512_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200513_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200513_gep_all_06z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200513_gep_all_12z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200513_gep_all_18z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200514_gep_all_00z.csv is already downloaded: TRUE"
+[1] "/data/NOAA/prpo/prpo_20200514_gep_all_06z.csv is already downloaded: FALSE"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tmp2m[0:20][0:64][137:137][261:261]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dlwrfsfc[0:20][0:64][137:137][261:261]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?dswrfsfc[0:20][0:64][137:137][261:261]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pratesfc[0:20][0:64][137:137][261:261]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?rh2m[0:20][0:64][137:137][261:261]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?vgrd10m[0:20][0:64][137:137][261:261]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?ugrd10m[0:20][0:64][137:137][261:261]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?spfh2m[0:20][0:64][137:137][261:261]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?pressfc[0:20][0:64][137:137][261:261]"
+[1] "https://nomads.ncep.noaa.gov:9090/dods/gens/gens20200514/gep_all_06z.ascii?tcdcclm[0:20][0:64][137:137][261:261]"
+[1] "/data/NOAA/prpo/prpo_20200514_gep_all_12z.csv is already downloaded: FALSE"
+[1] "/data/NOAA/prpo/prpo_20200514_gep_all_18z.csv is already downloaded: FALSE"
+
+
+GitHub Server:
+
+[fcre 2d2a22e] 05/14/20 08:30:01: Git Backup
+ 1 file changed, 1366 insertions(+)
+ create mode 100644 fcre_20200514_gep_all_06z.csv
+Already up to date.
+Thu May 14 08:41:43 EDT 2020
+To github.com:CareyLabVT/noaa_gefs_forecasts.git
+   0c158f8..2d2a22e  fcre -> fcre
+[sugg db8e11d] 05/14/20 08:30:01: Git Backup
+ 1 file changed, 1366 insertions(+)
+ create mode 100644 sugg_20200514_gep_all_06z.csv
+Already up to date.
+Thu May 14 08:41:47 EDT 2020
+To github.com:CareyLabVT/noaa_gefs_forecasts.git
+   ca7604b..db8e11d  sugg -> sugg
+[sunp 47f647d] 05/14/20 08:30:01: Git Backup
+ 1 file changed, 1366 insertions(+)
+ create mode 100644 sunp_20200514_gep_all_06z.csv
+Already up to date.
+Thu May 14 08:41:52 EDT 2020
+To github.com:CareyLabVT/noaa_gefs_forecasts.git
+   9d42aeb..47f647d  sunp -> sunp
+[cram 4d0ddf9] 05/14/20 08:30:01: Git Backup
+ 1 file changed, 1366 insertions(+)
+ create mode 100644 cram_20200514_gep_all_06z.csv
+Already up to date.
+Thu May 14 08:41:56 EDT 2020
+To github.com:CareyLabVT/noaa_gefs_forecasts.git
+   8f92b10..4d0ddf9  cram -> cram
+[tool f107600] 05/14/20 08:30:01: Git Backup
+ 1 file changed, 1366 insertions(+)
+ create mode 100644 tool_20200514_gep_all_06z.csv
+Already up to date.
+Thu May 14 08:42:01 EDT 2020
+To github.com:CareyLabVT/noaa_gefs_forecasts.git
+   b0c8495..f107600  tool -> tool
+[prpo 6a44693] 05/14/20 08:30:01: Git Backup
+ 1 file changed, 1366 insertions(+)
+ create mode 100644 prpo_20200514_gep_all_06z.csv
+Already up to date.
+Thu May 14 08:42:06 EDT 2020
+To github.com:CareyLabVT/noaa_gefs_forecasts.git
+   0e8e595..6a44693  prpo -> prpo
+
+
+Push the Logs to GitHub:
+
