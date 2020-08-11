@@ -37,7 +37,7 @@ for(lake_index in 1:length(lake_name_list)){
   lat <- which.min(abs(lat.dom - lake_lat_n_list[lake_index])) - 1 #NOMADS indexes start at 0 
   
   #Get yesterdays 6 am GMT, 12 pm GMT, 6 pm GMT, and todays 12 an GMT runs
-  urls.out <- GetDODSDates(abbrev = "gens_bc", archive=FALSE, request.sleep=1)
+  urls.out <- GetDODSDates(abbrev = "gens_bc")
   
   for(i in 1:length(urls.out$url)){
     
