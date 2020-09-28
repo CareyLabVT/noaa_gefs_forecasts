@@ -51,6 +51,8 @@ for(lake_index in 1:length(lake_name_list)){
     run_date <- urls.out$date[i]
     model_list <- c("gefs_pgrb2ap5_all_00z", "gefs_pgrb2ap5_all_06z", "gefs_pgrb2ap5_all_12z", "gefs_pgrb2ap5_all_18z")
     
+    model_list_old <- c("gep_all_00z", "gep_all_06z", "gep_all_12z", "gep_all_18z")
+    
     for(m in 1:length(model_list)){
       
       file_present_local <- file.exists(paste0(directory, lake_name_list[lake_index], '/', lake_name_list[lake_index], '_', run_date, '_', model_list[m], '.csv'))
@@ -133,7 +135,7 @@ for(lake_index in 1:length(lake_name_list)){
                                       pressfc = pressfc$value,
                                       tcdcclm = tcdcclm$value)
           
-          write.csv(forecast_noaa, paste0(directory, lake_name_list[lake_index], "/", lake_name_list[lake_index], "_", run_date, "_", model_list[m], '.csv'), row.names = FALSE)
+          write.csv(forecast_noaa, paste0(directory, lake_name_list[lake_index], "/", lake_name_list[lake_index], "_", run_date, "_", model_list_old[m], '.csv'), row.names = FALSE)
         }
       }
     }
