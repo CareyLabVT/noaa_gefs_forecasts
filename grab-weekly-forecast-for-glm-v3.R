@@ -67,7 +67,7 @@ for(lake_index in 1:length(lake_name_list)){
         
         model.runs <- tryCatch(GetDODSModelRuns(model.url),
                                error = function(e){
-                                 warning(paste(e$message, "skipping", file_name),
+                                 warning(paste(e$message, "skipping", paste0(directory, lake_name_list[lake_index], '/', lake_name_list[lake_index], '_', run_date, '_', model_list_old[m], '.csv')),
                                          call. = FALSE)
                                  return(NA)
                                },
