@@ -56,6 +56,8 @@ for(lake_index in 1:length(lake_name_list)){
     for(m in 1:length(model_list)){
       
       file_present_local <- file.exists(paste0(directory, lake_name_list[lake_index], '/', lake_name_list[lake_index], '_', run_date, '_', model_list[m], '.csv'))
+      file_present_local_old <- file.exists(paste0(directory, lake_name_list[lake_index], '/', lake_name_list[lake_index], '_', run_date, '_', model_list_old[m], '.csv'))
+
       print(paste0(directory, lake_name_list[lake_index], '/', lake_name_list[lake_index], '_', run_date, '_', model_list[m], '.csv is already downloaded: ', file_present_local))
       
       #Check if already downloaded
