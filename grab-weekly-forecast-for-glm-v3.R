@@ -46,6 +46,8 @@ for(lake_index in 1:length(lake_name_list)){
     urls.out$date <- urls.out$date[which(lubridate::as_date(urls.out$date) > lubridate::as_date("2020-09-25"))]
     urls.out$url <- paste0("https://nomads.ncep.noaa.gov:443/dods/gefs/gefs",urls.out$date)
     
+    
+    
     model.url <- urls.out$url[i]
     #model.url <- str_replace(model.url,"gens_bc","gens")
     run_date <- urls.out$date[i]
@@ -57,87 +59,97 @@ for(lake_index in 1:length(lake_name_list)){
       
       file_present_local <- file.exists(paste0(directory, lake_name_list[lake_index], '/', lake_name_list[lake_index], '_', run_date, '_', model_list[m], '.csv'))
       file_present_local_old <- file.exists(paste0(directory, lake_name_list[lake_index], '/', lake_name_list[lake_index], '_', run_date, '_', model_list_old[m], '.csv'))
-
+      
       print(paste0(directory, lake_name_list[lake_index], '/', lake_name_list[lake_index], '_', run_date, '_', model_list[m], '.csv is already downloaded: ', file_present_local))
       
       #Check if already downloaded
       if(!file_present_local_old){
         
-        model.runs <- GetDODSModelRuns(model.url)
-        #check if avialable at NOAA
-        if(model_list[m] %in% model.runs$model.run){
+        model.runs <- tryCatch(GetDODSModelRuns(model.url),
+                               error = function(e){
+                                 warning(paste(e$message, "skipping", file_name),
+                                         call. = FALSE)
+                                 return(NA)
+                               },
+                               finally = NULL)
+        
+        if(!is.na(model.runs)){
           
-          model.run <- model.runs$model.run[which(model.runs$model.run == model_list[m])]
-          #Get variables of interest for GLM
-          
-          #tmp2m #temp at 2 m
-          
-          #dlwrfsfc #surface downward long-wave rad. flux [w/m^2]
-          
-          #dswrfsfc #surface downward short-wave rad. flux [w/m^2]
-          
-          #pratesfc #surface precipitation rate [kg/m^2/s]
-          
-          #rh2m #2 m above ground relative humidity [%] 
-          
-          #vgrd10m  #10 m above ground v-component of wind [m/s] 
-          
-          #ugrd10m #10 m above ground u-component of wind [m/s] 
-          
-          #spfh2m #2 m above specific humidity  [kg/kg] 
-          
-          #pressfc #Surface pressure [pa]
-          
-          #tcdcclm #entire atmosphere total cloud cover [%]
-          
-          tmp2m <- DODSGrab(model.url, model.run, "tmp2m", time = time, lon = c(lon,lon), 
-                            lat = c(lat,lat),ensembles=c(0,30))
-          
-          dlwrfsfc <- DODSGrab(model.url, model.run, "dlwrfsfc", time = time, lon = c(lon,lon), 
-                               lat = c(lat,lat),ensembles=c(0,30))
-          
-          dswrfsfc <- DODSGrab(model.url, model.run, "dswrfsfc", time = time, lon = c(lon,lon), 
-                               lat = c(lat,lat),ensembles=c(0,30))
-          
-          apcpsfc <- DODSGrab(model.url, model.run, "apcpsfc", time = time, lon = c(lon,lon), 
-                               lat = c(lat,lat),ensembles=c(0,30))
-          
-          apcpsfc$value <- apcpsfc$value / (60 * 60 * 6)
-          
-          rh2m <- DODSGrab(model.url, model.run, "rh2m", time = time, lon = c(lon,lon), 
-                           lat = c(lat,lat),ensembles=c(0,30))
-          
-          vgrd10m <- DODSGrab(model.url, model.run, "vgrd10m", time = time, lon = c(lon,lon), 
+          #check if avialable at NOAA
+          if(model_list[m] %in% model.runs$model.run){
+            
+            model.run <- model.runs$model.run[which(model.runs$model.run == model_list[m])]
+            #Get variables of interest for GLM
+            
+            #tmp2m #temp at 2 m
+            
+            #dlwrfsfc #surface downward long-wave rad. flux [w/m^2]
+            
+            #dswrfsfc #surface downward short-wave rad. flux [w/m^2]
+            
+            #pratesfc #surface precipitation rate [kg/m^2/s]
+            
+            #rh2m #2 m above ground relative humidity [%] 
+            
+            #vgrd10m  #10 m above ground v-component of wind [m/s] 
+            
+            #ugrd10m #10 m above ground u-component of wind [m/s] 
+            
+            #spfh2m #2 m above specific humidity  [kg/kg] 
+            
+            #pressfc #Surface pressure [pa]
+            
+            #tcdcclm #entire atmosphere total cloud cover [%]
+            
+            tmp2m <- DODSGrab(model.url, model.run, "tmp2m", time = time, lon = c(lon,lon), 
                               lat = c(lat,lat),ensembles=c(0,30))
-          
-          ugrd10m <- DODSGrab(model.url, model.run, "ugrd10m", time = time, lon = c(lon,lon), 
-                              lat = c(lat,lat),ensembles=c(0,30))
-          
-          #spfh2m <- DODSGrab(model.url, model.run, "spfh2m", time = time, lon = c(lon,lon), 
-          #                   lat = c(lat,lat),ensembles=c(0,30))
-          
-          pressfc <- DODSGrab(model.url, model.run, "pressfc", time = time, lon = c(lon,lon), 
-                              lat = c(lat,lat),ensembles=c(0,30))
-          
-          tcdcclm <- DODSGrab(model.url, model.run, "tcdcclm", time = time, lon = c(lon,lon), 
-                              lat = c(lat,lat),ensembles=c(0,30))
-          
-          forecast.time <- strftime(tmp2m$forecast.date, format="%Y-%m-%d %H:%M:%S",tz = 'GMT')
-          
-          forecast_noaa <- data.frame(forecast.date = forecast.time, 
-                                      ensembles = tmp2m$ensembles, 
-                                      tmp2m = tmp2m$value, 
-                                      dlwrfsfc= dlwrfsfc$value, 
-                                      dswrfsfc = dswrfsfc$value, 
-                                      pratesfc = apcpsfc$value, 
-                                      rh2m = rh2m$value, 
-                                      vgrd10m = vgrd10m$value, 
-                                      ugrd10m = ugrd10m$value, 
-                                      #spfh2m = spfh2m$value, 
-                                      pressfc = pressfc$value,
-                                      tcdcclm = tcdcclm$value)
-          
-          write.csv(forecast_noaa, paste0(directory, lake_name_list[lake_index], "/", lake_name_list[lake_index], "_", run_date, "_", model_list_old[m], '.csv'), row.names = FALSE)
+            
+            dlwrfsfc <- DODSGrab(model.url, model.run, "dlwrfsfc", time = time, lon = c(lon,lon), 
+                                 lat = c(lat,lat),ensembles=c(0,30))
+            
+            dswrfsfc <- DODSGrab(model.url, model.run, "dswrfsfc", time = time, lon = c(lon,lon), 
+                                 lat = c(lat,lat),ensembles=c(0,30))
+            
+            apcpsfc <- DODSGrab(model.url, model.run, "apcpsfc", time = time, lon = c(lon,lon), 
+                                lat = c(lat,lat),ensembles=c(0,30))
+            
+            apcpsfc$value <- apcpsfc$value / (60 * 60 * 6)
+            
+            rh2m <- DODSGrab(model.url, model.run, "rh2m", time = time, lon = c(lon,lon), 
+                             lat = c(lat,lat),ensembles=c(0,30))
+            
+            vgrd10m <- DODSGrab(model.url, model.run, "vgrd10m", time = time, lon = c(lon,lon), 
+                                lat = c(lat,lat),ensembles=c(0,30))
+            
+            ugrd10m <- DODSGrab(model.url, model.run, "ugrd10m", time = time, lon = c(lon,lon), 
+                                lat = c(lat,lat),ensembles=c(0,30))
+            
+            #spfh2m <- DODSGrab(model.url, model.run, "spfh2m", time = time, lon = c(lon,lon), 
+            #                   lat = c(lat,lat),ensembles=c(0,30))
+            
+            pressfc <- DODSGrab(model.url, model.run, "pressfc", time = time, lon = c(lon,lon), 
+                                lat = c(lat,lat),ensembles=c(0,30))
+            
+            tcdcclm <- DODSGrab(model.url, model.run, "tcdcclm", time = time, lon = c(lon,lon), 
+                                lat = c(lat,lat),ensembles=c(0,30))
+            
+            forecast.time <- strftime(tmp2m$forecast.date, format="%Y-%m-%d %H:%M:%S",tz = 'GMT')
+            
+            forecast_noaa <- data.frame(forecast.date = forecast.time, 
+                                        ensembles = tmp2m$ensembles, 
+                                        tmp2m = tmp2m$value, 
+                                        dlwrfsfc= dlwrfsfc$value, 
+                                        dswrfsfc = dswrfsfc$value, 
+                                        pratesfc = apcpsfc$value, 
+                                        rh2m = rh2m$value, 
+                                        vgrd10m = vgrd10m$value, 
+                                        ugrd10m = ugrd10m$value, 
+                                        #spfh2m = spfh2m$value, 
+                                        pressfc = pressfc$value,
+                                        tcdcclm = tcdcclm$value)
+            
+            write.csv(forecast_noaa, paste0(directory, lake_name_list[lake_index], "/", lake_name_list[lake_index], "_", run_date, "_", model_list_old[m], '.csv'), row.names = FALSE)
+          }
         }
       }
     }
