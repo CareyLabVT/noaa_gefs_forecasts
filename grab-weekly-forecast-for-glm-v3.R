@@ -61,7 +61,7 @@ for(lake_index in 1:length(lake_name_list)){
       print(paste0(directory, lake_name_list[lake_index], '/', lake_name_list[lake_index], '_', run_date, '_', model_list[m], '.csv is already downloaded: ', file_present_local))
       
       #Check if already downloaded
-      if(!file_present_local){
+      if(!file_present_local_old){
         
         model.runs <- GetDODSModelRuns(model.url)
         #check if avialable at NOAA
